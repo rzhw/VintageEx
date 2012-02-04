@@ -227,6 +227,32 @@ EX_COMMANDS = {
                                 invocations=(),
                                 error_on=(ex_error.ERR_TRAILING_CHARS,)
                                 ),
+    # TODO: add arg support
+    ('tabnew', 'tabnew'): ex_cmd_data(
+                                command='ex_new_file',
+                                invocations=(),
+                                error_on=(ex_error.ERR_TRAILING_CHARS,)
+                                ),
+    ('tabclose', 'tabc'): ex_cmd_data(
+                                command='ex_quit',
+                                invocations=(),
+                                error_on=(ex_error.ERR_TRAILING_CHARS,
+                                          ex_error.ERR_NO_RANGE_ALLOWED,)
+                                ),
+    ('tabnext', 'tabn'): ex_cmd_data(
+                                command='ex_next_view',
+                                invocations=(),
+                                error_on=(ex_error.ERR_NO_RANGE_ALLOWED,
+                                          ex_error.ERR_NO_BANG_ALLOWED,
+                                          ex_error.ERR_TRAILING_CHARS)
+                                ),
+    ('tabprevious', 'tabp'): ex_cmd_data(
+                                command='ex_prev_view',
+                                invocations=(),
+                                error_on=(ex_error.ERR_NO_RANGE_ALLOWED,
+                                          ex_error.ERR_NO_BANG_ALLOWED,
+                                          ex_error.ERR_TRAILING_CHARS)
+                                ),
     ('ascii', 'as'): ex_cmd_data(
                                 # This command is implemented in Packages/Vintage.
                                 command='show_ascii_info',

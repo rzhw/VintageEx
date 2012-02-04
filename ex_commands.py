@@ -582,6 +582,16 @@ class ExPrint(sublime_plugin.TextCommand):
             v.insert(edit, v.size(), (str(r) + ' ' + t + '\n').lstrip())
 
 
+class ExNextView(sublime_plugin.TextCommand):
+    def run(self, edit, forced=False):
+        self.view.window().run_command('next_view')
+
+
+class ExPrevView(sublime_plugin.TextCommand):
+    def run(self, edit, forced=False):
+        self.view.window().run_command('prev_view')
+
+
 # TODO: General note for all :q variants:
 #   ST has a notion of hot_exit, whereby it preserves all buffers so that they
 #   can be restored next time you open ST. With this option on, all :q
